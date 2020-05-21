@@ -1,0 +1,21 @@
+version: '2.0'
+services:
+  ##PREFIX##-collabora:
+    image: collabora/code
+    container_name: ##PREFIX##-collabora
+    environment:
+      - domain=##OUTERHOST##
+    networks:
+      - ##PREFIX##-net
+    cap_add:
+      - MKNOD
+
+networks:
+  ##PREFIX##-net:
+    external: true
+
+#volumes:
+#  ##PREFIX##-seafile-mysql:
+#    external: true
+#  ##PREFIX##-seafile-data:
+#    external: true
